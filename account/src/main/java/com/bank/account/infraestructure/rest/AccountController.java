@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import javax.validation.Valid;
+
 //Controlador Rest
 @Slf4j
 @RestController
@@ -32,7 +34,7 @@ public class AccountController {
 
     //Anotación para agregar registros.
     @PostMapping("/add")
-    public Mono<Account> post(@RequestBody Account account){
+    public Mono<Account> post(@Valid @RequestBody Account account){
         return accountOperations.create(account);
     }
 

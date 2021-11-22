@@ -9,10 +9,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class ProductDao {
 
     @Id
-    private String id;
-    private String idAccount;
-    private String idBusiness;
-    private String idUser;
-    private String userType;
+    private String id;                  //Código del Producto(Asignación)
+    private String idAccount;           //Código de Cuenta
+    private String idBusiness;          //Código de Empresa
+    private String idUser;              //Código de Usuario
+    private String userType;            //Tipo de Usuario (Titular(T) o Firmante(F))
 
 }

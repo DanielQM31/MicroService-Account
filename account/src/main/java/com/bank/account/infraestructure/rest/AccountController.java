@@ -5,7 +5,9 @@ import com.bank.account.application.AccountOperations;
 import com.bank.account.domain.Account;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -35,6 +37,9 @@ public class AccountController {
     //Anotación para agregar registros.
     @PostMapping("/add")
     public Mono<Account> post(@Valid @RequestBody Account account){
+        if (account == null){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Campos vacíos");
+        }
         return accountOperations.create(account);
     }
 

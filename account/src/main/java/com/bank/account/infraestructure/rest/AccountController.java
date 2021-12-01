@@ -21,19 +21,19 @@ public class AccountController {
     //Anotación para obtener todos los registros.
     @GetMapping
     public Flux<Account> get() {
-        return accountOperations.queryAll();
+        return accountOperations.findAll();
     }
 
     //Anotación para obtener registro por Código.
     @GetMapping("/{id}")
     public Mono<Account> getId(@PathVariable String id){
-        return accountOperations.findId(id);
+        return accountOperations.findById(id);
     }
 
     //Anotación para agregar registros.
     @PostMapping("/add")
     public Mono<Account> post(@RequestBody Account account){
-        return accountOperations.create(account);
+        return accountOperations.save(account);
     }
 
     //Anotación para editar los registros.

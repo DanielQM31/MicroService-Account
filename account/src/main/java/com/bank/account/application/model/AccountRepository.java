@@ -6,8 +6,8 @@ import reactor.core.publisher.Mono;
 
 public interface AccountRepository {
 
-    public Mono<Account> getId(String id);
-    public Flux<Account> getAll();
+    public Flux<Account> findAll();
+    public Mono<Account> findById(String id);
     public Mono<Account> save(Account account);
     public Mono<Account> update(String id, Account account);
     public Mono<Void> delete(String id);

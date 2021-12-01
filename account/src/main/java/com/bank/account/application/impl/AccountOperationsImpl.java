@@ -17,19 +17,19 @@ public class AccountOperationsImpl implements AccountOperations {
 
     //Listado
     @Override
-    public Flux<Account> queryAll() {
-        return repository.getAll();
+    public Flux<Account> findAll() {
+        return repository.findAll();
     }
 
     //Listado por ID
     @Override
-    public Mono<Account> findId(String id) {
-        return repository.getId(id);
+    public Mono<Account> findById(String id) {
+        return repository.findById(id);
     }
 
     //Agregar
     @Override
-    public Mono<Account> create(Account account) {
+    public Mono<Account> save(Account account) {
         return repository.save(account);
     }
 

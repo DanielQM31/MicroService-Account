@@ -7,9 +7,9 @@ import reactor.core.publisher.Mono;
 //Operaciones con las que se va a trabajar Account.
 public interface AccountOperations {
 
-    public Flux<Account> queryAll();
-    public Mono<Account> findId(String id);
-    public Mono<Account> create(Account account);
+    public Flux<Account> findAll();
+    public Mono<Account> findById(String id);
+    public Mono<Account> save(Account account);
     public Mono<Account> update(String id, Account account);
     public Mono<Void> delete(String id);
 

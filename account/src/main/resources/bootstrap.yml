@@ -1,9 +1,0 @@
-spring:
-  application:
-    name: account-service
-  cloud:
-    config:
-      enable: false
-      uri: http://localhost:8010
-      username: user
-      password: root
